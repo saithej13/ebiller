@@ -1,0 +1,72 @@
+/*1. SQFLITE DB BACKUP OPTION*/  --COMPLETED
+/*2. SQFLITE DB RESTORE*/  --COMPLETED
+3. UPLOAD IMAGE TO SQFLITE AND DISPLAY IN SALES  --INCOMPLETE
+/*4. BNAME IN PRINT SLIP WITH BLOD AND BIG FONT SIZE */
+5. Develop Screen for User Creation
+6. Role Based Access Control
+7. Provide an Option for Licence Update from cloud and limit branch to 1
+8. AutoUpdate Apk --
+9. promt message to user when bluetooth printer connected  -- NOT NEEDED ELEVATED BUTTON WITH GREEN AND RED COLOR ARE USED TO IDENTIFY
+10.edit option for sales saved tokens in draggablelist  -- PROVIDED DELETE OPTION ONLY
+/*11.change package_name*/
+/*12.SALES RECEIPT PRINT STYLES (BOLD, FONT SIZE AND ETC..,)*/
+/*13.IMPLEMENT MULTIPLE ITEMS IN ONE BILL (ONE PRINT (MT_PSL_SALE , MT_PSL_SALEDETAILS))*/
+/*14.IMPLEMENT EXPANDABLE LIST VIEW FOR SALEDETAILS IN DRAGGABLE_LISTVIEW*/
+/*15.CHANGE COLOR FOR EXPANDED VIEW */
+16.IMPLEMENT TABS IN SALESVIEW CATEGORY WISE
+17.BUILD A SCREEN FOR REPORTS ITEMWISE SALE
+/*18.WHEN I CLICK ON THE DELETE BUTTON OF EXPANDED ITEM ITS DELETING IN THE BACKEND BUT UI IS NOT GETTING UPDATED
+    (I'M REOPENING THE SCREEN TO CHECK WHETHER DELETED OR NOT)*/
+/*19.FIX APPBAR COLOR ISSUE*/
+
+child: item['image']!=null?Image(image:item.getImageProvider(),fit:BoxFit.cover,):Text('No Image',style: TextStyle(fontSize: 18),),
+child: item['image']!=null? Image(image: item['image'].getImageProvider(), fit: BoxFit.cover):Text('No Image',style: TextStyle(fontSize: 18),),
+
+https://script.google.com/macros/s/AKfycbwagMOtUzSekElfMXi468tXnCfklsH4eYgDbB4nVH65zJ1C0BT94800gvQai-MWhx8q/exec   //web app url
+AKfycbwagMOtUzSekElfMXi468tXnCfklsH4eYgDbB4nVH65zJ1C0BT94800gvQai-MWhx8q   //Deployment Id
+
+Widget richText = RichText(
+                                      text: TextSpan(
+                                        style: DefaultTextStyle.of(context).style,
+                                        children: [
+                                          TextSpan(
+                                            text: 'VST TECHNOLOGIES\r\n',
+                                            style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                                          ),
+                                          TextSpan(
+                                            text: 'Date:'+format.format(DateTime.now()).toString()+ '\r\n'+
+                                                'Item ID:'+item['ITEMID'].toString()+ '\r\n'+
+                                                'Cust Code:'+''+ '\r\n'+
+                                                'QTY:'+_QTY.toString()+ '\r\n'+
+                                                'RATE:'+(_AMT/_QTY).toString()+ '\r\n'+
+                                                'AMOUNT:'+ _AMT.toString()+ '\r\n'+
+                                                'SGST:'+ double.parse(item['SGST'].toString()).toString()+ '\r\n'+
+                                                'CGST:'+ double.parse(item['CGST'].toString()).toString()+ '\r\n'+
+                                                'IGST:'+ double.parse(item['IGST'].toString()).toString()+ '\r\n'+
+                                                'TAXRATE:'+ double.parse(item['TRATE'].toString()).toString()+ '\r\n'+
+                                                'TAXAMOUNT:'+ (_TAX*100).toString()+ '\r\n'+
+                                                'PAYMODE:'+ 'CASH'.toString()+ '\r\n'+
+                                                'CRDATE:'+ format.format(DateTime.now()).toString()+ '\r\n',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+
+
+
+
+                                    ITEMID:item['ITEMID'],
+                                                                            TDATE: format.format(DateTime.now()),
+                                                                            CCODE: 1,
+                                                                            QTY: _QTY,
+                                                                            RATE:(_AMT/_QTY),
+                                                                            AMOUNT: _AMT,
+                                                                            SGST: double.parse(item['SGST'].toString()),
+                                                                            CGST: double.parse(item['CGST'].toString()),
+                                                                            IGST: double.parse(item['IGST'].toString()),
+                                                                            TAXRATE: double.parse(item['TRATE'].toString()),
+                                                                            TAXAMOUNT: _TAX,
+                                                                            PAYMODE: _isSwitched ? 'Online' : 'Cash',
+                                                                            CRDATE: format.format(DateTime.now()),
+                                                                            CREATEDBY: "ADMIN");
