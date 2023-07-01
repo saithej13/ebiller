@@ -279,12 +279,10 @@ class _Item_Entery extends State<ItemMaster> {
                       );
                       },
                       );
-
                               },
                             ),
                           ],
                         );
-
                     },
                   );
                 },
